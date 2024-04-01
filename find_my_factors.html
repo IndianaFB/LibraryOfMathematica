@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Find My Factors</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Enter a number and press "Gimme the factors"!</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number...">
+    <button onclick="calculateFactors()">Gimme the factors!</button>
+    <div id="result"></div>
+
+    <script>
+    //     function calculateFactors() {
+    // const inputNumber = parseInt(document.getElementById('numberInput').value);
+    // const resultDiv = document.getElementById('result');
+    // resultDiv.innerHTML = ''; // Clear previous results
+
+    // for (let i = 1; i <= inputNumber; i++) {
+    //     if (inputNumber % i === 0) {
+    //         resultDiv.innerHTML += `${i}, `;
+    //     }
+    // }
+// }
+        function calculateFactors(){
+            const inputNumber = parseInt(document.getElementById('numberInput').value);
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+
+            for (let i = 1; i <= inputNumber; i++){
+                if (inputNumber % i === 0){
+                    resultDiv.innerHTML += `${i}, `;
+                }
+            }
+            //NEXT TIME: write some logic to add extra text if the number is a prime
+            // it would be cool to have a website that is in like, darkness, it's night, BUT if there is a prime number then the sun comes up. Slowly fading between the colours.
+        }
+    </script>
+</body>
+</html>
