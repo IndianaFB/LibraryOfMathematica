@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
-<body style="background-color: bisque;">
+<body id="background">
     <div class="calculator-container">
         <h1>Enter a number and press "Gimme the factors"!</h1>
         <input type="number" id="numberInput" placeholder="Enter a number...">
@@ -23,6 +23,9 @@
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = '';
 
+            const isPrime = checkPrime(inputNumber);
+            const backgroundDiv = document.getElementById('background');
+
             for (let i = 1; i <= inputNumber; i++){
                 if (inputNumber % i === 0){
                     if(i === inputNumber){
@@ -35,8 +38,26 @@
                 }
                 
             }
+            if(isPrime){
+                backgroundDiv.style.backgroundColor = 'bisque';
+            }
+            else{
+                backgroundDiv.style.backgroundColor = '#0000BB';
+            }
             //NEXT TIME: write some logic to add extra text if the number is a prime
             // it would be cool to have a website that is in like, darkness, it's night, BUT if there is a prime number then the sun comes up. Slowly fading between the colours.
+        }
+
+        function checkPrime(num){
+            if(num <= 1){
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++){
+                if (num % i == 0){
+                    return false;
+                }
+            }
+            return true;
         }
     </script>
 </body>
