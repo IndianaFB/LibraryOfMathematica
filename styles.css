@@ -32,6 +32,7 @@ h1{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     text-shadow: 0 0 10px black;
+    text-align: center;
 }
 
 #background {
