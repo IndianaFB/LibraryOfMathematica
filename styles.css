@@ -1,13 +1,33 @@
 *{
     margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 h1{
     font-family: 'Courier New', Courier, monospace;
     color: white;
     text-shadow: 0 0 10px black;
 }
+.central-div{
+    display: flex;
+    flex-direction: column;
+    align-items:safe;
+    /* justify-content: space-evenly; */
+    border: 5px solid pink;
+}
+.central-div *{
+    margin: 1.5%;
+}
 .calculator-container{
     background-color: black;
+}
+.calculator-container input{
+    min-width: 200px;
+    min-height: 40px;
+    padding: 12px 20px;
+
+    font-size: 20px;
+
 }
 .calculate-button{
     background-color: black;
@@ -16,14 +36,13 @@ h1{
     color: white;
     padding: 16px 32px;
     text-align: center;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     transition-duration: 0.4s;
 }
 .calculate-button:hover{
     background-color: white;
-    border: 3px solid green;
+    border: 3px solid black;
     color: black;
 }
 #result{
@@ -39,3 +58,16 @@ h1{
     background-color: #0000BB;
     transition: background-color 2s ease;
 }
+
+/* For WebKit-based browsers (Chrome, Safari, Edge, Opera) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
