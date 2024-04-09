@@ -1,13 +1,17 @@
+/* #region Global Styles */
 *{
     margin: 0px;
     font-family: 'Courier New', Courier, monospace;
-
+    /*...*/
 }
 h1{
     font-family: 'Courier New', Courier, monospace;
     color: white;
     text-shadow: 0 0 10px black;
+
 }
+/* #endregion */
+
 .central-div{
     display: flex;
     flex-direction: column;
