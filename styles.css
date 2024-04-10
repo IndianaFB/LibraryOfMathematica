@@ -17,6 +17,11 @@ nav{
     background-color: black;
     height: clamp(30px, 50px, 50px);
     width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
 }
 nav a{
     font-size: clamp(1.2rem, 1.5rem, 2rem);
