@@ -12,6 +12,37 @@ h1{
 }
 /* #endregion */
 
+/* #region Nav Bar */
+nav{
+    background-color: black;
+    height: clamp(30px, 50px, 50px);
+    width: 100vw;
+}
+nav a{
+    font-size: clamp(1.2rem, 1.5rem, 2rem);
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+nav a:hover{
+    /* text-decoration: underline; */
+}
+nav a::after {
+    content: ''; /* Create the pseudo-element */
+    position: absolute;
+    bottom: 0; /* Position it at the bottom of the link */
+    left: 0;
+    width: 0; /* Initially no width */
+    height: 2px; /* Set the height of the underline */
+    background-color: white; /* Your desired underline color */
+    transition: width 0.4s ease; /* Add a smooth transition */
+  }
+  
+  nav a:hover::after {
+    width: 100%; /* Expand the underline on hover */
+  }
+/* #endregion */
+
 .central-div{
     display: flex;
     flex-direction: column;
