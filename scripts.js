@@ -17,18 +17,13 @@ function calculateFactors(){
             }
             
         }
-        
     }
     if(isPrime){
-        backgroundDiv.style.backgroundColor = 'bisque';
-        resultDiv.style.color = 'brown';
-        resultDiv.style.textShadow = '0 0 10px orange';
+        day();
 
     }
     else{
-        backgroundDiv.style.backgroundColor = '#0000BB';
-        resultDiv.style.color = 'white';
-        resultDiv.style.textShadow = '0 0 10px cyan';
+        night();
     }
 }
 
@@ -46,7 +41,16 @@ function checkPrime(num){
     }
     return true;
 }
-
+function day(){
+    backgroundDiv.style.backgroundColor = 'bisque';
+    resultDiv.style.color = 'brown';
+    resultDiv.style.textShadow = '0 0 10px orange';
+}
+function night(){
+    backgroundDiv.style.backgroundColor = '#0000BB';
+    resultDiv.style.color = 'white';
+    resultDiv.style.textShadow = '0 0 10px cyan';
+}
 function handleKeyPress(event){
     if(event.key === "Enter"){
         calculateFactors();
