@@ -6,6 +6,7 @@ function calculateFactors(){
 
     const isPrime = checkPrime(inputNumber);
     const backgroundDiv = document.getElementById('background');
+    const introdiv = document.getElementById('introdiv');
     
     document.getElementById('numberInput').value = '';
 
@@ -21,7 +22,7 @@ function calculateFactors(){
         }
     }
     if(isPrime){
-        day(backgroundDiv, resultDiv);
+        day(backgroundDiv, resultDiv, introdiv);
 
     }
     else{
@@ -47,10 +48,13 @@ function checkPrime(num){
     return true;
 }
 
-function day(backgroundDiv, resultDiv){
+function day(backgroundDiv, resultDiv, introdiv){
     backgroundDiv.style.backgroundColor = 'bisque';
     resultDiv.style.color = 'brown';
     resultDiv.style.textShadow = '0 0 10px orange';
+    introdiv.style.color = 'brown';
+    introdiv.style.textShadow = '0 0 10px orange';
+
 }
 
 function night(backgroundDiv, resultDiv){
