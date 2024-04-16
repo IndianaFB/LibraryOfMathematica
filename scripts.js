@@ -52,7 +52,7 @@ function day(backgroundDiv, resultDiv, introdiv){
     backgroundDiv.style.backgroundColor = 'bisque';
     resultDiv.style.color = 'brown';
     resultDiv.style.textShadow = '0 0 10px orange';
-    introdiv.style.color = 'brown';
+    introdiv.h1.style.color = 'brown';
     introdiv.style.textShadow = '0 0 10px orange';
 
 }
