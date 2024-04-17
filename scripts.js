@@ -1,13 +1,17 @@
 //#region Find My Factors
 function calculateFactors(){
+    //Initializes inputNumber and gives it the value of the input from numberInput, parsed as an integer
     const inputNumber = parseInt(document.getElementById('numberInput').value);
+    //Initializes the various divs involved in the function
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = 'Factors of ' + inputNumber + ': ';
-
-    const isPrime = checkPrime(inputNumber);
     const backgroundDiv = document.getElementById('background');
     const introdiv = document.getElementById('introdiv');
-    
+    //Prints most recent result, wipes older result
+    resultDiv.innerHTML = 'Factors of ' + inputNumber + ': ';
+    //Defines isPrime by running a check for primes on the input number (boolean)
+    const isPrime = checkPrime(inputNumber);
+
+    //Clears the input field ready for the next calculation
     document.getElementById('numberInput').value = '';
 
     for (let i = 1; i <= inputNumber; i++){
