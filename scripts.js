@@ -8,42 +8,49 @@ function calculateFactors(){
     const introdiv = document.getElementById('introdiv');
     //Prints most recent result, wipes older result
     resultDiv.innerHTML = 'Factors of ' + inputNumber + ': ';
-    //Defines isPrime by running a check for primes on the input number (boolean)
+    //Defines isPrime by running a check for primes on the input number (boolean result: either T or F)
     const isPrime = checkPrime(inputNumber);
-
     //Clears the input field ready for the next calculation
     document.getElementById('numberInput').value = '';
 
+    //Loops from 1 until i === inputNumber
     for (let i = 1; i <= inputNumber; i++){
+        //Checks if there are any remainders after dividing inputNumber by i. If there are any remainders, then the current value of i cannot be a factor of inputNumber
         if (inputNumber % i === 0){
+            //This if-else is for the purpose of string presentation
+            //If i === inputNumber it means we've reached the end of our string, so no commas are printed.
             if(i === inputNumber){
                 resultDiv.innerHTML += `${i}`;
             }
+            //Else it means we are still printing factors and so we add a comma to the string for proper presentation
             else{
                 resultDiv.innerHTML += `${i}, `;
             }
             
         }
     }
+    //This if-else uses isPrime, which runs checkPrime on the input number
+    //If our input is prime, the background colours change to a "day" theme
     if(isPrime){
         day(backgroundDiv, resultDiv, introdiv);
 
     }
+    //Otherwise they change to a "night" theme
     else{
         night(backgroundDiv, resultDiv);
     }
-
-    // const resultHeading = document.getElementById('resultHeading');
-    // resultHeading.textContent = inputNumber;
 }
-
+//This function checks if the inputNumber is prime - by default it returns true but returns false if other statements are met first
 function checkPrime(num){
+    //This if statement checks to make sure the number is above 0
     if(num <= 1){
         return false;
     }
+    //This if statement checks to make sure the number is not 0
     if(num === 0){
         return false;
     }
+    
     for (let i = 2; i <= Math.sqrt(num); i++){
         if (num % i == 0){
             return false;
